@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-image: url('IMG_20230720_102721.jpg');
+      background-color: black;
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat;
       font-family: Arial, sans-serif;
@@ -15,6 +15,23 @@
       height: 100vh;
       margin: 0;
     }
+  #wrapper {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:100vh;
+  width:100%;
+  background:url('https://i.pinimg.com/originals/09/05/a7/0905a74092fa43fce6218aa48f6a26a4.jpg') no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-color: #66fcf1;
+  animation:animateBg 4s linear infinite;
+}
+@keyframes animateBg {
+  100% {
+    filter:hue-rotate(360deg);
+  }
+}
 
     #login-container {
       background-color: #74747547;
@@ -50,11 +67,21 @@
     .error {
       color: red;
     }
+    @media only screen and (max-width: 600px) {
+  body {
+    background-color: black;
+  }
+   #wrapper{
+     background-image:url('/Subh/IMG_20230720_102721.jpg') ;
+     animation: none;
+   }
+    }
   </style>
+  
   <title>Login Page</title>
 </head>
 <body>
-
+<div id="wrapper">
   <div id="login-container">
     <h2><font color=white>Login</h2>
     <label for="username">Username:</label>
@@ -67,7 +94,7 @@
 
     <button onclick="validateLogin()"><font color=white>Login</button>
   </div>
-
+</div>
   <script>
     function validateLogin() {
       var usernameInput = document.getElementById("username").value;
@@ -77,7 +104,7 @@
       // Check the provided username and password
       if (usernameInput === "S" && passwordInput === "1234") {
         errorMessage.textContent = ""; // Clear any previous error message
-        window.open("https://subhom1234.github.io/Supplimentary-database-2.0/","_self");
+        open("https://subhom1234.github.io/House-Database-/");
       } else {
         errorMessage.textContent = "Invalid username or password.";
       }
