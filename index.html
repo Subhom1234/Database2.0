@@ -1,84 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-
-    <style>
-    body{
-      background-color: black;
-    }
-        .hidden {
-            display: none;
-        }
-    </style>
-    <style>
-      
-    #costume2{
-            
-      margin: -4%;
-    
-      width: 103%;
-      height: 103vh;
-      background: url('pexels-alessio-cesario-1906794 (2).jpg');
-      background-repeat: no-repeat;
-      background-position: bottom;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-  
-    }
-
-    #video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    #xyz
-    {
-      width: auto;
-      height: auto;
-      padding: 20px;
-      
-      border-radius: 30px;
-      background: #4A4856B0;
-    }
-    #success#070709{
-  color: #000000;
-  margin-top: -20px;
-
-  display: block;
-}
-
-
- 
-  </style>
-<style>
-    /* Style for the transparent button */
-    .transparent-button {
-      margin: 10px;
-      background-color: white;
-      border: 2px solid #ffffff; /* You can change the border color */
-      color: black; /* You can change the text color */
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
-<style>
-
-#div1 {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
       background-color: black;
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat;
@@ -120,14 +46,11 @@
       margin-bottom: 10px;
     }
 
-    #username {
+    input {
       padding: 8px;
       margin-bottom: 15px;
     }
-    #password {
-      padding: 8px;
-      margin-bottom: 15px;
-    }
+
     button {
       padding: 10px 20px;
       background-color: #4CAF50;
@@ -141,14 +64,11 @@
       background-color: #45a049;
     }
 
-    #error-msg {
+    .error {
       color: red;
     }
     @media only screen and (max-width: 600px) {
   body {
-    margin: 0%;
-    
-    height: 100vh;
     background-color: black;
   }
    #wrapper{
@@ -157,15 +77,12 @@
    }
     }
   </style>
-
-    
-
+  
+  <title>Login Page</title>
 </head>
 <body>
-<div id="div1">
 <div id="wrapper">
   <div id="login-container">
-        <form id="loginForm">
     <h2><font color=white>Login</h2>
     <label for="username">Username:</label>
     <input type="text" id="username" required>
@@ -175,170 +92,24 @@
 
     <p id="error-msg" class="error"></p>
 
-
-            <button type="button" onclick="checkCredentials()">Login</button>
-            <p id="outputMessage"></p>
-    </form>
+    <button onclick="validateLogin()"><font color=white>Login</button>
   </div>
 </div>
-</div>
+  <script>
+    function validateLogin() {
+      var usernameInput = document.getElementById("username").value;
+      var passwordInput = document.getElementById("password").value;
+      var errorMessage = document.getElementById("error-msg");
 
-    
-
-    <div id="customForm" class="hidden">
-        <!-- Your custom form content goes here -->
-       <div id="costume2" 
-
-    <form id="xyz" name="submit-to-google-sheet">
-      <lable><font color=white>Name:</font></lable>
-      <input type="text" name="Name" ><br><br>
-   
-       <lable><font color=white>Unit:</lable>
-       <input type="text" name="Unit"><br><br>
-        <lable><font color=white>Unit type:</lable>
-        <input type="radio" name="Unit type" value="Kg"><lable><font color=white>Kg</lable>
-      <input type="radio" name="Unit type" value="Liter"><lable><font color=white>Liter</lable>
-         <input type="radio" name="Unit type" value="Pises"><lable><font color=white>Pises</lable>
-      <input type="radio" name="Unit type" value="Meter"><lable><font color=white>Meter</lable>
-      <input type="radio" name="Unit type" value="Person"><lable><font color=white>Person</lable><br><br>
-         <lable><font color=white>Price:</lable>
-         <input type="text" name="Price"><br><br>
-      <lable><font color=white>Name of person:</lable>
-        <input type="radio" name="Person" value="Subhom"><lable><font color=white>Subhom</lable>
-      <input type="radio" name="Person" value="Sudeb"><lable><font color=white>Sudeb</lable>
-         <input type="radio" name="Person" value="Jhuma"><lable><font color=white>Jhuma</lable><br><br>
-         <lable><font color=white>Date:</lable>
-         <input type="text" name="Date"><br><br>
-      <lable><font color=white>Profit:</lable>
-         <input type="text" name="Profit"><br><br>
-         <lable><font color=white>Remark:</lable>
-         <input type="text" name="Remark" Remark><br><br>
-         <center>
-           
-         <button>Submit</button></center><br><br>
-<span id="success"></span>
-    </form>
-<div id="button-container">
-  <center>
-          <a href="https://docs.google.com/spreadsheets/d/1212y5f1WRIe213LBS7k8-9Jtiyfy-43QVMPXjC_hKKA/edit#gid=0" class="transparent-button">Find data</a>
-          <button onclick="refreshPage()">Logout</button>
-          </center>
-      
-
-    <!-- Add more buttons as needed -->
-  </div>
-
-    </div>
-    </div>
-
-
-
-    <script>
-        function checkCredentials() {
-            var enteredUsername = document.getElementById("username").value;
-            var enteredPassword = document.getElementById("password").value;
-            var correctUsername = "S";
-            var correctPassword = "1234";
-
-            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
-                document.getElementById("outputMessage").innerText = "Hi";
-                document.getElementById("loginForm").style.display = "none";
-                document.getElementById("customForm").classList.remove("hidden");
-                var contentDiv = document.getElementById('div1');
-      div1.style.display = 'none';
-            } else {
-                document.getElementById("error-msg").innerText = "Incorrect username or password. Please try again.";
-            }
-        }
-    </script>
-<script>
-    document.querySelectorAll('.custom-button').forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.preventDefault();
-        openFile(this.href);
-      });
-    });
-
-    function openFile(fileSrc) {
-      // Check if the file is an image or PDF
-      if (fileSrc.toLowerCase().endsWith(".pdf")) {
-        // Trigger PDF download
-        var a = document.createElement('a');
-        a.href = fileSrc;
-        a.download = fileSrc.split('/').pop();
-        a.click();
+      // Check the provided username and password
+      if (usernameInput === "S" && passwordInput === "1234") {
+        errorMessage.textContent = ""; // Clear any previous error message
+        window.open("https://subhom1234.github.io/Supplimentary-database-2.0/","_self");
       } else {
-        // Display image (you may add your image display logic here)
-        console.log('Image clicked');
+        errorMessage.textContent = "Invalid username or password.";
       }
     }
   </script>
-  <script>
-    document.querySelectorAll('.custom-button').forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.preventDefault();
-        openFile(this.href);
-      });
-    });
 
-    function openFile(fileSrc) {
-      // Check if the file is an image or PDF
-      if (fileSrc.toLowerCase().endsWith(".pdf")) {
-        // Trigger PDF download
-        var a = document.createElement('a');
-        a.href = fileSrc;
-        a.download = fileSrc.split('/').pop();
-        a.click();
-      } else {
-        // Display image (you may add your image display logic here)
-        console.log('Image clicked');
-      }
-    }
-  </script>
-  <script>
-    document.querySelectorAll('.custom-button').forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.preventDefault();
-        openFile(this.href);
-      });
-    });
-
-    function openFile(fileSrc) {
-      // Check if the file is an image or PDF
-      if (fileSrc.toLowerCase().endsWith(".pdf")) {
-        // Trigger PDF download
-        var a = document.createElement('a');
-        a.href = fileSrc;
-        a.download = fileSrc.split('/').pop();
-        a.click();
-      } else {
-        // Display image (you may add your image display logic here)
-        console.log('Image clicked');
-      }
-    }
-  </script>
-  <script>
-
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzN_s4lGay-izKPZoImMT3y0A86_pofS6BaUTaDSFoGUSPrUA6QlAU43A-Sd1gCVjXM/exec'
-
-  const form = document.forms['submit-to-google-sheet']
-const success = document.getElementById('success')
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {success.innerHTML="Data Successfully Submitted";
-        setTimeout(function(){
-          success.innerHTML="";},5000)
-        form.reset();
-      })
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
- <script>
-    function refreshPage() {
-      // Reload the page
-      location.reload();
-    }
-  </script>
 </body>
 </html>
